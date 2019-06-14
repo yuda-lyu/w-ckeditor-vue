@@ -1,0 +1,64 @@
+# w-ckeditor-vue
+A wrapper for @ckeditor/ckeditor-vue.
+
+![language](https://img.shields.io/badge/language-JavaScript-orange.svg) 
+[![npm version](http://img.shields.io/npm/v/w-ckeditor-vue.svg?style=flat)](https://npmjs.org/package/w-ckeditor-vue) 
+[![Build Status](https://travis-ci.org/yuda-lyu/w-ckeditor-vue.svg?branch=master)](https://travis-ci.org/yuda-lyu/w-ckeditor-vue) [![license](https://img.shields.io/npm/l/w-ckeditor-vue.svg?style=flat)](https://npmjs.org/package/w-ckeditor-vue) 
+[![gzip file size](http://img.badgesize.io/yuda-lyu/w-ckeditor-vue/master/dist/w-ckeditor-vue.umd.js.svg?compression=gzip)](https://github.com/yuda-lyu/w-ckeditor-vue)
+[![npm download](https://img.shields.io/npm/dt/w-ckeditor-vue.svg)](https://npmjs.org/package/w-ckeditor-vue) 
+[![jsdelivr download](https://img.shields.io/jsdelivr/npm/hm/w-ckeditor-vue.svg)](https://www.jsdelivr.com/package/npm/w-ckeditor-vue)
+
+## Documentation
+To view documentation or get support, visit [docs](https://yuda-lyu.github.io/w-ckeditor-vue/module-WCkeditorVue.html).
+
+## Example
+To view some examples for more understanding, visit examples:
+> **default:** [ex-default.html](https://yuda-lyu.github.io/w-ckeditor-vue/examples/ex-default.html) [[source code](https://github.com/yuda-lyu/w-ckeditor-vue/blob/master/docs/examples/ex-default.html)]
+
+## Installation
+### Using npm(ES6 module):
+> **Note:** w-ckeditor-vue depends on `ckeditor` and `vue`.
+```alias
+npm i w-ckeditor-vue
+```
+By import:
+```alias
+<w-ckeditor-vue 
+    v-model="..."
+></w-ckeditor-vue>
+
+import WCkeditorVue from 'w-ckeditor-vue'
+
+Vue.component('w-ckeditor-vue', WCkeditorVue)
+```
+
+### In a browser(UMD module):
+> **Note:** umd file includes with `@ckeditor/ckeditor-vue`, by using tree-shaking for dead-code elimination
+
+[Necessary] Add script for ckeditor.
+```alias
+<script src="https://cdn.jsdelivr.net/npm/ckeditor/ckeditor.min.js"></script>
+```
+[Necessary] Add script for vue.
+```alias
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+```
+[Necessary] Add script for w-ckeditor-vue.
+```alias
+<script src="https://cdn.jsdelivr.net/npm/w-ckeditor-vue@1.0.0/dist/w-ckeditor-vue.umd.js"></script>
+```
+Directly use:
+```alias
+<w-ckeditor-vue 
+    v-model="..."
+></w-ckeditor-vue>
+
+Vue.component('w-ckeditor-vue', window['w-ckeditor-vue'])
+
+new Vue({
+    el: '#app',
+    data: {
+        content: 'abc中文123'
+    }
+})
+```
