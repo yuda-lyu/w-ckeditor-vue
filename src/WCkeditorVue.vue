@@ -36,7 +36,7 @@ export default {
             type: String,
         },
         editor: {
-            type: Object,
+            type: [Object, Function],
             default: function() {
                 return window['ClassicEditor']
             }
