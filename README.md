@@ -1,5 +1,5 @@
 # w-ckeditor-vue
-A wrapper for @ckeditor/ckeditor-vue.
+A wrapper for @ckeditor/ckeditor5-vue.
 
 ![language](https://img.shields.io/badge/language-JavaScript-orange.svg) 
 [![npm version](http://img.shields.io/npm/v/w-ckeditor-vue.svg?style=flat)](https://npmjs.org/package/w-ckeditor-vue) 
@@ -17,7 +17,7 @@ To view some examples for more understanding, visit examples:
 
 ## Installation
 ### Using npm(ES6 module):
-> **Note:** w-ckeditor-vue depends on `ckeditor` and `vue`.
+> **Note:** w-ckeditor-vue depends on `@ckeditor/ckeditor5-build-classic` and `vue`.
 ```alias
 npm i w-ckeditor-vue
 ```
@@ -33,11 +33,11 @@ Vue.component('w-ckeditor-vue', WCkeditorVue)
 ```
 
 ### In a browser(UMD module):
-> **Note:** umd file includes with `@ckeditor/ckeditor-vue`, by using tree-shaking for dead-code elimination
+> **Note:** umd file includes with `@ckeditor/ckeditor5-vue`, by using tree-shaking for dead-code elimination
 
 [Necessary] Add script for ckeditor.
 ```alias
-<script src="https://cdn.jsdelivr.net/npm/ckeditor/ckeditor.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@ckeditor/ckeditor5-build-classic/build/ckeditor.min.js"></script>
 ```
 [Necessary] Add script for vue.
 ```alias
@@ -45,7 +45,7 @@ Vue.component('w-ckeditor-vue', WCkeditorVue)
 ```
 [Necessary] Add script for w-ckeditor-vue.
 ```alias
-<script src="https://cdn.jsdelivr.net/npm/w-ckeditor-vue@1.0.1/dist/w-ckeditor-vue.umd.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/w-ckeditor-vue@1.0.2/dist/w-ckeditor-vue.umd.js"></script>
 ```
 Directly use:
 ```alias
