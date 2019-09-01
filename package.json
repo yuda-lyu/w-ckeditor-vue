@@ -1,6 +1,6 @@
 {
   "name": "w-ckeditor-vue",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "A wrapper for @ckeditor/ckeditor5-vue.",
   "main": "dist/w-ckeditor-vue.umd.js",
   "dependencies": {
