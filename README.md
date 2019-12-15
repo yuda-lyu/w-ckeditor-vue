@@ -2,6 +2,7 @@
 A wrapper for @ckeditor/ckeditor5-vue.
 
 ![language](https://img.shields.io/badge/language-JavaScript-orange.svg) 
+[![language](https://img.shields.io/badge/vue-2.x-brightgreen.svg)](https://github.com/vuejs/vue) 
 [![npm version](http://img.shields.io/npm/v/w-ckeditor-vue.svg?style=flat)](https://npmjs.org/package/w-ckeditor-vue) 
 [![Build Status](https://travis-ci.org/yuda-lyu/w-ckeditor-vue.svg?branch=master)](https://travis-ci.org/yuda-lyu/w-ckeditor-vue) [![license](https://img.shields.io/npm/l/w-ckeditor-vue.svg?style=flat)](https://npmjs.org/package/w-ckeditor-vue) 
 [![gzip file size](http://img.badgesize.io/yuda-lyu/w-ckeditor-vue/master/dist/w-ckeditor-vue.umd.js.svg?compression=gzip)](https://github.com/yuda-lyu/w-ckeditor-vue)
@@ -45,7 +46,7 @@ Vue.component('w-ckeditor-vue', WCkeditorVue)
 ```
 [Necessary] Add script for w-ckeditor-vue.
 ```alias
-<script src="https://cdn.jsdelivr.net/npm/w-ckeditor-vue@1.0.13/dist/w-ckeditor-vue.umd.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/w-ckeditor-vue@1.0.14/dist/w-ckeditor-vue.umd.js"></script>
 ```
 Directly use:
 ```alias
