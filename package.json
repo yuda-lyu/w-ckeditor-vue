@@ -1,14 +1,14 @@
 {
   "name": "w-ckeditor-vue",
-  "version": "1.0.17",
+  "version": "1.0.18",
   "description": "A wrapper for @ckeditor/ckeditor5-vue.",
   "main": "dist/w-ckeditor-vue.umd.js",
   "dependencies": {
-    "@ckeditor/ckeditor5-build-classic": "^17.0.0",
+    "@ckeditor/ckeditor5-build-classic": "^19.0.1",
     "@ckeditor/ckeditor5-vue": "^1.0.1"
   },
   "devDependencies": {
-    "w-package-tools": "^1.0.23"
+    "w-package-tools": "^1.0.25"
   },
   "scripts": {
     "test": "./node_modules/.bin/mocha --require @babel/register",
