@@ -14,22 +14,37 @@
     <script src="https://cdn.jsdelivr.net/npm/w-ckeditor-vue@latest/dist/w-ckeditor-vue.umd.js"></script>
 
 </head>
-<body style="font-family:'Microsoft JhengHei','Avenir','Helvetica'; padding:20px;">
+<body style="font-family:'Microsoft JhengHei','Avenir','Helvetica'; margin:0px; padding:0px;">
 
     <div id="app">
 
-        <w-ckeditor-vue
-            style="vertical-align:top;"
-            :height="height"
-            v-model="content"
-        ></w-ckeditor-vue>
-
-        <w-ckeditor-vue
-            style="vertical-align:top;"
-            :height="200"
-            v-model="content"
-        ></w-ckeditor-vue>
-
+        <div style="margin:20px;">
+            <div>1. bind height</div>
+            <w-ckeditor-vue
+                style="vertical-align:top;"
+                :height="height"
+                v-model="content"
+            ></w-ckeditor-vue>
+        </div>
+        
+        <div style="margin:20px;">
+            <div>2. sync content</div>
+            <w-ckeditor-vue
+                style="vertical-align:top;"
+                :height="200"
+                v-model="content"
+            ></w-ckeditor-vue>
+        </div>
+        
+        <div style="margin:20px;">
+            <div>3. settings</div>
+            <w-ckeditor-vue
+                style="vertical-align:top;"
+                :settings="settings"
+                v-model="content"
+            ></w-ckeditor-vue>
+        </div>
+        
     </div>
 
     <script>
@@ -43,6 +58,11 @@
             data: {
                 content: 'abc中文123',
                 height: 250,
+                settings: {
+                    language: 'zh',
+                    //toolbar: ['heading', '|', 'bold', 'italic', 'link', '|', 'subscript', 'superscript', '|', 'alignment:left', 'alignment:right', 'alignment:center', 'alignment:justify', '|', 'bulletedList', 'numberedList', 'blockQuote', '|', 'Undo', 'Redo'],
+                    toolbar: ['heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote'],
+                },
             },
             // mounted: function() {
             //     let vo=this
