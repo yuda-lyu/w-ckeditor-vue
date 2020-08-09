@@ -38,7 +38,7 @@ Vue.component('w-ckeditor-vue', WCkeditorVue)
 
 [Necessary] Add script for ckeditor.
 ```alias
-<script src="https://cdn.jsdelivr.net/npm/@ckeditor/ckeditor5-build-classic/build/ckeditor.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@ckeditor/ckeditor5-build-classic@21.0.0/build/ckeditor.js"></script>
 ```
 [Necessary] Add script for vue.
 ```alias
@@ -46,7 +46,7 @@ Vue.component('w-ckeditor-vue', WCkeditorVue)
 ```
 [Necessary] Add script for w-ckeditor-vue.
 ```alias
-<script src="https://cdn.jsdelivr.net/npm/w-ckeditor-vue@1.0.19/dist/w-ckeditor-vue.umd.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/w-ckeditor-vue@1.0.20/dist/w-ckeditor-vue.umd.js"></script>
 ```
 Directly use:
 ```alias

@@ -1,26 +1,31 @@
 <template>
-    <div style="display:inline-block;">
+    <div style="display:inline-block;" :changeHeight="changeHeight">
 
         <cceditor
-            :editor="editor"
+            ref="edr"
+            :editor="ClassicEditor"
             :config="settings"
             :value="value"
             :disabled="!editable"
             @input="function(v){$emit('input',v)}"
+            @ready="onReady"
         ></cceditor>
 
     </div>
 </template>
 
 <script>
+import get from 'lodash/get'
 //import ClassicEditor from '@ckeditor/ckeditor5-build-classic'
 import '@ckeditor/ckeditor5-build-classic/build/translations/zh'
 import CKEditor from '@ckeditor/ckeditor5-vue'
+
 
 let def_settings = {
     language: 'zh',
     //toolbar: [ 'heading', '|', 'bold', 'italic', 'link', '|', 'subscript', 'superscript', '|', 'alignment:left', 'alignment:right', 'alignment:center', 'alignment:justify', '|', 'bulletedList', 'numberedList', 'blockQuote', '|', 'Undo', 'Redo' ],
 }
+
 
 /**
  * @vue-prop {String} value 輸入富文本字串
@@ -35,17 +40,15 @@ export default {
         value: {
             type: String,
         },
-        editor: {
-            type: [Object, Function],
-            default: function() {
-                return window['ClassicEditor']
-            }
-        },
         settings: {
             type: Object,
             default: function() {
                 return def_settings
             }
+        },
+        height: {
+            type: Number,
+            default: 250,
         },
         editable: {
             type: Boolean,
@@ -54,19 +57,79 @@ export default {
     },
     data: function() {
         return {
+            ClassicEditor: window['ClassicEditor'],
         }
     },
-    mounted: function() {
-    },
     computed: {
+
+        changeHeight: function() {
+            //console.log('computed changeHeight')
+
+            let vo = this
+
+            //height for trigger
+            let height = vo.height
+            vo.__heightTemp__ = height
+
+            //updateHeight
+            vo.updateHeight()
+
+            return ''
+        },
+
     },
     methods: {
+
+        onReady: function() {
+            //console.log('methods onReady')
+
+            let vo = this
+
+            //updateHeight
+            vo.updateHeight()
+
+        },
+
+        getEditor: function() {
+            //console.log('methods getEditor')
+
+            let vo = this
+
+            if (vo.$refs.edr) {
+                return vo.$refs.edr.instance
+            }
+            return null
+        },
+
+        updateHeight: function() {
+            //console.log('methods updateHeight')
+
+            let vo = this
+
+            vo.$nextTick(() => {
+
+                //editor
+                let editor = vo.getEditor()
+
+                //ele
+                let eleContent = get(editor, 'ui.view.editable.element') //可編輯區是element已通過v-deep設為100%
+                let ele = get(eleContent, 'parentNode') //要把height設定至父層的高度才能響應調整
+
+                //update height
+                if (editor && ele) {
+                    ele.style.height = vo.height + 'px'
+                }
+
+            })
+
+        },
+
     },
 }
 </script>
 
 <style scoped>
 ::v-deep .ck-content {
-    height:250px;
+    height:100%;
 }
 </style>
