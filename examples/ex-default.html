@@ -5,7 +5,7 @@
     <title>example for w-ckeditor-vue</title>
 
     <!-- ckeditor -->
-    <script src="https://cdn.jsdelivr.net/npm/@ckeditor/ckeditor5-build-classic/build/ckeditor.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@ckeditor/ckeditor5-build-classic@21.0.0/build/ckeditor.js"></script>
 
     <!-- vue -->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
@@ -18,7 +18,15 @@
 
     <div id="app">
 
-        <w-ckeditor-vue 
+        <w-ckeditor-vue
+            style="vertical-align:top;"
+            :height="height"
+            v-model="content"
+        ></w-ckeditor-vue>
+
+        <w-ckeditor-vue
+            style="vertical-align:top;"
+            :height="200"
             v-model="content"
         ></w-ckeditor-vue>
 
@@ -33,8 +41,15 @@
         new Vue({
             el: '#app',
             data: {
-                content:'abc中文123'
-            }
+                content: 'abc中文123',
+                height: 250,
+            },
+            // mounted: function() {
+            //     let vo=this
+            //     setInterval(function(){
+            //         vo.height+=10
+            //     },1000)
+            // },
         })
 
     </script>
