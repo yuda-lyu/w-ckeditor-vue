@@ -16,14 +16,22 @@
 
 <script>
 import get from 'lodash/get'
-//import ClassicEditor from '@ckeditor/ckeditor5-build-classic'
+import cloneDeep from 'lodash/cloneDeep'
+import isEmpty from 'lodash/isEmpty'
 import '@ckeditor/ckeditor5-build-classic/build/translations/zh'
 import CKEditor from '@ckeditor/ckeditor5-vue'
 
 
+//ckeditor5 需要用線上自選 plugin 打包: https://ckeditor.com/ckeditor-5/online-builder/
+//下載解壓縮後, 將 ckeditor.js 與 ckeditor.js.map 放置於 distCK 內, 打包時會再自動複製到 dist
+
+
 let def_settings = {
     language: 'zh',
-    //toolbar: [ 'heading', '|', 'bold', 'italic', 'link', '|', 'subscript', 'superscript', '|', 'alignment:left', 'alignment:right', 'alignment:center', 'alignment:justify', '|', 'bulletedList', 'numberedList', 'blockQuote', '|', 'Undo', 'Redo' ],
+    toolbar: ['heading', '|', 'fontSize', 'fontColor', 'fontBackgroundColor', '|', 'bold', 'italic', '|', 'subscript', 'superscript', '|', 'alignment:left', 'alignment:right', 'alignment:center', 'alignment:justify', '|', 'bulletedList', 'numberedList', 'blockQuote', '|', 'insertTable', '|', 'link', 'mediaEmbed', 'imageInsert', '|', 'Undo', 'Redo'],
+    table: {
+        contentToolbar: ['tableColumn', 'tableRow', 'mergeTableCells', 'tableProperties', 'tableCellProperties']
+    },
 }
 
 
@@ -67,10 +75,13 @@ export default {
 
             let vo = this
 
-            return {
-                ...def_settings,
-                ...vo.settings,
+            //s
+            let s = cloneDeep(def_settings)
+            if (!isEmpty(vo.settings)) {
+                s = cloneDeep(vo.settings)
             }
+
+            return s
         },
 
         changeHeight: function() {
@@ -90,6 +101,10 @@ export default {
 
     },
     methods: {
+
+        // isObjEmpty: function(obj) {
+        //     return Object.keys(obj).length === 0 && obj.constructor === Object
+        // },
 
         onReady: function() {
             //console.log('methods onReady')

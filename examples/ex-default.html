@@ -4,8 +4,8 @@
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
     <title>example for w-ckeditor-vue</title>
 
-    <!-- ckeditor -->
-    <script src="https://cdn.jsdelivr.net/npm/@ckeditor/ckeditor5-build-classic@21.0.0/build/ckeditor.js"></script>
+    <!-- ckeditor5 23.0.0 -->
+    <script src="../dist/ckeditor.js"></script>
 
     <!-- vue -->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
@@ -21,7 +21,6 @@
         <div style="margin:20px;">
             <div>1. bind height</div>
             <w-ckeditor-vue
-                style="vertical-align:top;"
                 :height="height"
                 v-model="content"
             ></w-ckeditor-vue>
@@ -30,7 +29,6 @@
         <div style="margin:20px;">
             <div>2. sync content</div>
             <w-ckeditor-vue
-                style="vertical-align:top;"
                 :height="200"
                 v-model="content"
             ></w-ckeditor-vue>
@@ -39,7 +37,6 @@
         <div style="margin:20px;">
             <div>3. settings</div>
             <w-ckeditor-vue
-                style="vertical-align:top;"
                 :settings="settings"
                 v-model="content"
             ></w-ckeditor-vue>
@@ -58,10 +55,12 @@
             data: {
                 content: 'abc中文123',
                 height: 250,
-                settings: {
+                settings:  {
                     language: 'zh',
-                    //toolbar: ['heading', '|', 'bold', 'italic', 'link', '|', 'subscript', 'superscript', '|', 'alignment:left', 'alignment:right', 'alignment:center', 'alignment:justify', '|', 'bulletedList', 'numberedList', 'blockQuote', '|', 'Undo', 'Redo'],
-                    toolbar: ['heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote'],
+                    toolbar: ['heading', '|', 'fontSize', 'fontColor', 'fontBackgroundColor', '|', 'bold', 'italic', '|', 'subscript', 'superscript', '|', 'alignment:left', 'alignment:right', 'alignment:center', 'alignment:justify', '|', 'bulletedList', 'numberedList', 'blockQuote', '|', 'insertTable', '|', 'Undo', 'Redo'],
+                    table: {
+                        contentToolbar: ['tableColumn', 'tableRow', 'mergeTableCells', 'tableProperties', 'tableCellProperties']
+                    },
                 },
             },
             // mounted: function() {
