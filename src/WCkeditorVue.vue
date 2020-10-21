@@ -1,7 +1,7 @@
 <template>
     <div style="display:inline-block;" :changeHeight="changeHeight">
 
-        <cceditor
+        <ckcmp-editor
             ref="edr"
             :editor="ClassicEditor"
             :config="useSettings"
@@ -9,7 +9,7 @@
             :disabled="!editable"
             @input="function(v){$emit('input',v)}"
             @ready="onReady"
-        ></cceditor>
+        ></ckcmp-editor>
 
     </div>
 </template>
@@ -93,7 +93,7 @@ let def_settings = {
  */
 export default {
     components: {
-        'cceditor': CKEditor.component
+        'ckcmp-editor': CKEditor.component
     },
     props: {
         value: {
@@ -116,6 +116,7 @@ export default {
     data: function() {
         return {
             ClassicEditor: window['ClassicEditor'],
+            editor: null,
         }
     },
     computed: {
@@ -152,29 +153,17 @@ export default {
     },
     methods: {
 
-        // isObjEmpty: function(obj) {
-        //     return Object.keys(obj).length === 0 && obj.constructor === Object
-        // },
-
-        onReady: function() {
-            //console.log('methods onReady')
+        onReady: function(editor) {
+            //console.log('methods onReady', editor)
 
             let vo = this
+
+            //save editor
+            vo.editor = editor
 
             //updateHeight
             vo.updateHeight()
 
-        },
-
-        getEditor: function() {
-            //console.log('methods getEditor')
-
-            let vo = this
-
-            if (vo.$refs.edr) {
-                return vo.$refs.edr.instance
-            }
-            return null
         },
 
         updateHeight: function() {
@@ -182,17 +171,19 @@ export default {
 
             let vo = this
 
+            //check
+            if (vo.editor === null) {
+                return
+            }
+
             vo.$nextTick(() => {
 
-                //editor
-                let editor = vo.getEditor()
-
                 //ele
-                let eleContent = get(editor, 'ui.view.editable.element') //可編輯區是element已通過v-deep設為100%
+                let eleContent = get(vo.editor, 'ui.view.editable.element') //可編輯區是element已通過v-deep設為100%
                 let ele = get(eleContent, 'parentNode') //要把height設定至父層的高度才能響應調整
 
                 //update height
-                if (editor && ele) {
+                if (ele) {
                     ele.style.height = vo.height + 'px'
                 }
 
