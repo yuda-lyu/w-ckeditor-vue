@@ -22,6 +22,9 @@ import '@ckeditor/ckeditor5-build-classic/build/translations/zh'
 import CKEditor from '@ckeditor/ckeditor5-vue'
 
 
+//ckeditor5不支援IE11, 若要得另外使用ckeditor4開發
+
+
 //ckeditor5 需要用線上自選 plugins 打包: https://ckeditor.com/ckeditor-5/online-builder/
 //手動選擇 plugins:
 // Alignment

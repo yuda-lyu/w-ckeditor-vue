@@ -8,7 +8,7 @@
     <script src="../dist/ckeditor.js"></script>
 
     <!-- vue -->
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.min.js"></script>
 
     <!-- w-ckeditor-vue -->
     <script src="../dist/w-ckeditor-vue.umd.js"></script>
@@ -20,6 +20,10 @@
 
         <div style="margin:20px;">
             <div>1. bind height ({{height}}px)</div>
+            <div>
+                <button type="button" @click="height=150">set height to 150px</button>
+                <button type="button" @click="height=200">set height to 200px</button>
+            </div>
             <w-ckeditor-vue
                 :height="height"
                 v-model="content"
@@ -54,7 +58,7 @@
             el: '#app',
             data: {
                 content: 'abc中文123',
-                height: 250,
+                height: 200,
                 settings:  {
                     language: 'zh',
                     toolbar: {
@@ -85,17 +89,17 @@
                     },
                 },
             },
-            mounted: function() {
-                let vo=this
-                let h=vo.height
-                let t=setInterval(function(){
-                    vo.height-=2
-                    if(vo.height<=200){
-                        vo.height=h
-                        clearInterval(t)
-                    }
-                },50)
-            },
+            // mounted: function() {
+            //     let vo=this
+            //     let h=vo.height
+            //     let t=setInterval(function(){
+            //         vo.height-=2
+            //         if(vo.height<=200){
+            //             vo.height=h
+            //             clearInterval(t)
+            //         }
+            //     },50)
+            // },
         })
 
     </script>

@@ -18,7 +18,7 @@ To view some examples for more understanding, visit examples:
 
 ## Installation
 ### Using npm(ES6 module):
-> **Note:** w-ckeditor-vue depends on `@ckeditor/ckeditor5-build-classic`, `@ckeditor/ckeditor5-vue` and `vue`.
+> **Note:** w-ckeditor-vue is mainly dependent on `@ckeditor/ckeditor5-build-classic`, `@ckeditor/ckeditor5-vue` and `vue`.
 ```alias
 npm i w-ckeditor-vue
 ```
@@ -42,7 +42,7 @@ Vue.component('w-ckeditor-vue', WCkeditorVue)
 ```
 [Necessary] Add script for vue.
 ```alias
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.min.js"></script>
 ```
 [Necessary] Add script for w-ckeditor-vue.
 ```alias

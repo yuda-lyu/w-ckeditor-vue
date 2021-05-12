@@ -1,19 +1,19 @@
 {
   "name": "w-ckeditor-vue",
-  "version": "1.0.24",
+  "version": "2.0.0",
   "description": "A wrapper for @ckeditor/ckeditor5-vue.",
   "main": "dist/w-ckeditor-vue.umd.js",
   "dependencies": {
     "@ckeditor/ckeditor5-alignment": "^23.0.0",
     "@ckeditor/ckeditor5-build-classic": "^23.0.0",
     "@ckeditor/ckeditor5-editor-classic": "^23.0.0",
-    "@ckeditor/ckeditor5-vue": "^1.0.3"
+    "@ckeditor/ckeditor5-vue": "^1.0.30"
   },
   "devDependencies": {
-    "w-package-tools": "^1.0.30"
+    "w-package-tools": "^1.0.54"
   },
   "scripts": {
-    "test": "./node_modules/.bin/mocha --require @babel/register",
+    "test": "mocha --parallel --timeout 60000 --experimental-modules --es-module-specifier-resolution=node",
     "deploy": "gh-pages -d docs"
   },
   "repository": {
