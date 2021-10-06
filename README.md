@@ -4,7 +4,6 @@ A wrapper for @ckeditor/ckeditor5-vue.
 ![language](https://img.shields.io/badge/language-JavaScript-orange.svg) 
 [![language](https://img.shields.io/badge/vue-2.x-brightgreen.svg)](https://github.com/vuejs/vue) 
 [![npm version](http://img.shields.io/npm/v/w-ckeditor-vue.svg?style=flat)](https://npmjs.org/package/w-ckeditor-vue) 
-[![Build Status](https://travis-ci.org/yuda-lyu/w-ckeditor-vue.svg?branch=master)](https://travis-ci.org/yuda-lyu/w-ckeditor-vue) [![license](https://img.shields.io/npm/l/w-ckeditor-vue.svg?style=flat)](https://npmjs.org/package/w-ckeditor-vue) 
 [![gzip file size](http://img.badgesize.io/yuda-lyu/w-ckeditor-vue/master/dist/w-ckeditor-vue.umd.js.svg?compression=gzip)](https://github.com/yuda-lyu/w-ckeditor-vue)
 [![npm download](https://img.shields.io/npm/dt/w-ckeditor-vue.svg)](https://npmjs.org/package/w-ckeditor-vue) 
 [![jsdelivr download](https://img.shields.io/jsdelivr/npm/hm/w-ckeditor-vue.svg)](https://www.jsdelivr.com/package/npm/w-ckeditor-vue)
