@@ -90,7 +90,7 @@ let def_settings = {
 
 /**
  * @vue-prop {String} [value=''] 輸入富文本字串，預設為''
- * @vue-prop {Object} [settings={}] 輸入quill設定物件，預設值詳見原始碼
+ * @vue-prop {Object} [settings={}] 輸入ckeditor設定物件，預設值詳見原始碼
  * @vue-prop {Number} [height=250] 輸入高度數字，單位為px，預設為250
  * @vue-prop {Boolean} [editable=true] 輸入是否允許編輯，預設true
  */
