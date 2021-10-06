@@ -11,7 +11,7 @@ async function main() {
     //把example裡面cdn更換, 再複製到docs的example內, 作為日後發佈為靜態網站
 
     //cdn
-    let cdn = `<script src="https://cdn.jsdelivr.net/npm/w-ckeditor-vue@latest/dist/w-ckeditor-vue.umd.js"></script>`
+    let cdn = `<script src="https://cdn.jsdelivr.net/npm/w-quill-vue@latest/dist/w-quill-vue.umd.js"></script>`
 
     //mkdirSync
     if (!fs.existsSync(fd_tar)) {
@@ -30,7 +30,7 @@ async function main() {
         let c = fs.readFileSync(fn, 'utf8')
 
         //replace
-        let r = `<script src="../dist/w-ckeditor-vue.umd.js"></script>`
+        let r = `<script src="../dist/w-quill-vue.umd.js"></script>`
         c = c.replace(r, cdn)
 
         //write
