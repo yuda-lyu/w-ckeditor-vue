@@ -1,16 +1,13 @@
 {
   "name": "w-ckeditor-vue",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "A wrapper for @ckeditor/ckeditor5-vue.",
   "main": "dist/w-ckeditor-vue.umd.js",
-  "dependenciesTemp": {
-    "@ckeditor/ckeditor5-alignment": "^23.0.0",
-    "@ckeditor/ckeditor5-build-classic": "^23.0.0",
-    "@ckeditor/ckeditor5-editor-classic": "^23.0.0",
-    "@ckeditor/ckeditor5-vue": "^1.0.30"
+  "dependencies": {
+    "@ckeditor/ckeditor5-build-classic": "^33.0.0"
   },
   "devDependencies": {
-    "w-package-tools": "^1.0.59"
+    "w-package-tools": "^1.0.65"
   },
   "scripts": {
     "test": "mocha --parallel --timeout 60000 --experimental-modules --es-module-specifier-resolution=node",

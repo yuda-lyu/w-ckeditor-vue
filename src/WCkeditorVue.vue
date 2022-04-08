@@ -18,8 +18,10 @@
 import get from 'lodash/get'
 import cloneDeep from 'lodash/cloneDeep'
 import isEmpty from 'lodash/isEmpty'
-import '@ckeditor/ckeditor5-build-classic/build/translations/zh'
-import CKEditor from '@ckeditor/ckeditor5-vue'
+import '@ckeditor/ckeditor5-build-classic/build/translations/zh.js'
+// import CKEditor from '@ckeditor/ckeditor5-vue'
+import CKEditor from './ckeditor.mjs'
+// console.log('CKEditor', CKEditor)
 
 
 //ckeditor5不支援IE11, 若要得另外使用ckeditor4開發
@@ -88,6 +90,15 @@ let def_settings = {
 }
 
 
+let ClassicEditor = null
+if (window.ClassicEditor) {
+    ClassicEditor = window.ClassicEditor
+}
+else {
+    throw new Error(`invalid window.ClassicEditor`)
+}
+
+
 /**
  * @vue-prop {String} [value=''] 輸入富文本字串，預設為''
  * @vue-prop {Object} [settings={}] 輸入ckeditor設定物件，預設值詳見原始碼
@@ -96,7 +107,7 @@ let def_settings = {
  */
 export default {
     components: {
-        'ckcmp-editor': CKEditor.component
+        'ckcmp-editor': CKEditor
     },
     props: {
         value: {
@@ -118,7 +129,7 @@ export default {
     },
     data: function() {
         return {
-            ClassicEditor: window['ClassicEditor'],
+            ClassicEditor,
             editor: null,
         }
     },

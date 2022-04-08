@@ -1,6 +1,5 @@
 import fs from 'fs'
 import rollupFiles from 'w-package-tools/src/rollupFiles.mjs'
-import getFiles from 'w-package-tools/src/getFiles.mjs'
 
 
 let fdSrc = './src'
@@ -12,7 +11,7 @@ async function core() {
 
     //rollupFiles
     await rollupFiles({
-        fns: getFiles(fdSrc),
+        fns: ['WCkeditorVue.vue'],
         fdSrc,
         fdTar,
         nameDistType: 'kebabCase',
