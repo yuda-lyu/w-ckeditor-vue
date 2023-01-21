@@ -1,13 +1,12 @@
 {
   "name": "w-ckeditor-vue",
-  "version": "2.0.2",
-  "description": "A wrapper for @ckeditor/ckeditor5-vue.",
+  "version": "2.0.3",
   "main": "dist/w-ckeditor-vue.umd.js",
   "dependencies": {
     "@ckeditor/ckeditor5-build-classic": "^33.0.0"
   },
   "devDependencies": {
-    "w-package-tools": "^1.0.65"
+    "w-package-tools": "^1.0.66"
   },
   "scripts": {
     "test": "mocha --parallel --timeout 60000 --experimental-modules --es-module-specifier-resolution=node",
@@ -17,17 +16,13 @@
     "type": "git",
     "url": "git+https://github.com/yuda-lyu/w-ckeditor-vue.git"
   },
-  "author": "yuda-lyu(semisphere)",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/yuda-lyu/w-ckeditor-vue/issues"
-  },
-  "homepage": "https://github.com/yuda-lyu/w-ckeditor-vue#readme",
   "keywords": [
     "package",
     "tool",
     "ckeditor",
     "vue",
     "wrapper"
-  ]
+  ],
+  "author": "yuda-lyu(semisphere)",
+  "license": "MIT"
 }
