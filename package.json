@@ -3,7 +3,7 @@
   "version": "2.0.3",
   "main": "dist/w-ckeditor-vue.umd.js",
   "dependencies": {
-    "@ckeditor/ckeditor5-build-classic": "^33.0.0"
+    "@ckeditor/ckeditor5-build-classic": "^36.0.1"
   },
   "devDependencies": {
     "w-package-tools": "^1.0.66"
