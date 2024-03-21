@@ -1,7 +1,6 @@
 //fork from: https://github.com/ckeditor/ckeditor5-vue2
 
-// import { debounce } from 'lodash-es';
-import debounce from 'lodash/debounce'
+import debounce from 'lodash-es/debounce'
 
 const INPUT_EVENT_DEBOUNCE_WAIT = 300
 
