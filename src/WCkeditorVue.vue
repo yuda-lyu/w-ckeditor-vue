@@ -15,9 +15,9 @@
 </template>
 
 <script>
-import get from 'lodash-es/get'
-import cloneDeep from 'lodash-es/cloneDeep'
-import isEmpty from 'lodash-es/isEmpty'
+import get from 'lodash-es/get.js'
+import cloneDeep from 'lodash-es/cloneDeep.js'
+import isEmpty from 'lodash-es/isEmpty.js'
 import '@ckeditor/ckeditor5-build-classic/build/translations/zh.js'
 // import CKEditor from '@ckeditor/ckeditor5-vue'
 import CKEditor from './ckeditor.mjs'
