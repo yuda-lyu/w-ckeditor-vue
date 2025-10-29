@@ -26,6 +26,7 @@ To view some examples for more understanding, visit examples:
 > **default:** [ex-default.html](https://yuda-lyu.github.io/w-ckeditor-vue/examples/ex-default.html) [[source code](https://github.com/yuda-lyu/w-ckeditor-vue/blob/master/docs/examples/ex-default.html)]
 
 ## Installation
+
 ### Using npm(ES6 module):
 ```alias
 npm i w-ckeditor-vue
@@ -42,20 +43,22 @@ Vue.component('w-ckeditor-vue', WCkeditorVue)
 ```
 
 ### In a browser(UMD module):
-> **Note:** umd file includes with `@ckeditor/ckeditor5-vue`, by using tree-shaking for dead-code elimination
 
-[Necessary] Add script for ckeditor.
+Add script for ckeditor.
 ```alias
 <script src="https://cdn.jsdelivr.net/npm/@ckeditor/ckeditor5-build-classic@21.0.0/build/ckeditor.js"></script>
 ```
-[Necessary] Add script for vue.
+
+Add script for vue.
 ```alias
 <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.min.js"></script>
 ```
-[Necessary] Add script for w-ckeditor-vue.
+
+Add script for w-ckeditor-vue.
 ```alias
 <script src="https://cdn.jsdelivr.net/npm/w-ckeditor-vue@2.0.6/dist/w-ckeditor-vue.umd.js"></script>
 ```
+
 Directly use:
 ```alias
 <w-ckeditor-vue 
