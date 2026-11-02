@@ -56,7 +56,7 @@ Add script for vue.
 
 Add script for w-ckeditor-vue.
 ```alias
-<script src="https://cdn.jsdelivr.net/npm/w-ckeditor-vue@2.0.13/dist/w-ckeditor-vue.umd.js"></script>
+<script src="https://yuda-lyu.github.io/w-ckeditor-vue/dist/w-ckeditor-vue.umd.js"></script>
 ```
 
 Directly use:
